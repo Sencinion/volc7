@@ -1,0 +1,13 @@
+name: Volcano
+main: dev.volcano.VolcanoPlugin
+version: 1.0.0
+api-version: '1.20'
+description: Mt. Vesuvius eruption event (built-in schematic, no WorldEdit/FAWE needed)
+commands:
+  volcano:
+    description: Control the volcano event
+    usage: /volcano <paste|remove|start <time>|stop|reload>
+    permission: volcano.admin
+permissions:
+  volcano.admin:
+    default: op

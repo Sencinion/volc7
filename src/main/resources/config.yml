@@ -1,0 +1,47 @@
+settings:
+  paste-budget-ms: 40          # max ms per tick spent pasting/removing (FAWE-style batching)
+  phase-seconds: 60            # length of each of the 5 sections
+  plume-height: 70
+  plume-build-seconds: 30
+  pane-rise-height: 40
+  lava:
+    flow-length: 150           # lava flows out to this many blocks from the crater edge; nothing goes past it
+    feeder-spacing: 4          # pace-setting source rows down each channel; lava physics fills in between
+    max-promoted-sources: 40000  # safety cap on flowing->source conversions per eruption
+    corridor-growth: 0.3       # how fast the river corridor widens past the mountain's base (blocks of width per block)
+  debris:
+    radius: 150                # players within this many blocks of the crater get debris
+    per-player-per-second: 3
+    damage: 10.0               # 5 hearts, anvil-style, ignores armor (use 5.0 for 2.5 hearts)
+  heat-radius: 5
+  fire-seconds: 20
+  fumes:
+    damage: 1.0                # half a heart
+    interval-seconds: 2
+    # falling leaf particles that spin down around players during the fumes (first one this server knows is used).
+    # PALE_OAK_LEAVES is gray/white (1.21.4+); CHERRY_LEAVES works on 1.20+ but is pink.
+    leaf-particles: [PALE_OAK_LEAVES, CHERRY_LEAVES]
+  cleanup-plume-on-end: true
+
+countdown-announce: [60, 30, 10, 5, 4, 3, 2, 1]
+
+bars:
+  pre: "&6&lEruption Imminent &7| &f%time% &7| &f%distance%m from the volcano"
+  eruption: "&4&lEruption &7| &f%time% &7| &f%distance%m from the volcano"
+  flowing: "&c&lFlowing Lava &7| &f%time% &7| &f%distance%m from the volcano"
+  fumes: "&a&lToxic Fumes &7| &f%time% &7| &f%distance%m from the volcano"
+
+messages:
+  start: "&6&l[Vesuvius] &eThe mountain is rumbling... eruption in &c%time%&e!"
+  countdown: "&6&l[Vesuvius] &eEruption in &c%time%&e!"
+  eruption: "&4&l[ERUPTION] &cMt. Vesuvius has exploded! Lava is pouring down the slopes!"
+  flowing: "&c&l[LAVA] &6Lava is flowing across the land! Seek high ground!"
+  fumes: "&a&l[FUMES] &2Toxic fumes now choke the air! Find shelter!"
+  end: "&a&l[Vesuvius] &7The eruption has ended."
+  death:
+    debris: "&7%player% was smushed by falling debris from the eruption"
+    burned: "&7%player% burned to death after coming into contact with lava"
+    toxic: "&7%player% inhaled too much ash and died"
+  pasting: "&eVolcano pasting started..."
+  pasted: "&aVolcano pasted."
+  removed: "&aVolcano removed."
